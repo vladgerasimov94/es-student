@@ -1,0 +1,28 @@
+задание: 2.1.1
+проект: 211-command-usb
+устройство: 2e8a:000a
+серийный номер: E6616407E35E282B
+порт: /dev/cu.usbmodem11401
+начало: 2026-11-03T13:12:52
+   0.000 --> enable
+   0.133 <-- enable
+   0.133 <-- dbg read_line:66 got enable
+   0.133 <-- inf handle_command:29 led on
+   2.142 --> disable
+   2.294 <-- disable
+   2.294 <-- dbg read_line:66 got disable
+   2.294 <-- inf handle_command:34 led off
+   4.312 --> info
+   4.395 <-- info
+   4.395 <-- dbg read_line:66 got info
+   4.395 <-- project: 211-command-usb
+   4.396 <-- repo: https://github.com/vladgerasimov94/es-student
+   4.396 <-- board: pico
+   4.396 <-- serial: E6616407E35E282B
+   4.396 <-- chip: manufacturer 0x927, part 0x0002, revision 2
+   4.397 <-- pico-sdk: 2.3.0
+   6.409 --> nosuchcommand
+   6.676 <-- nosuchcommand
+   6.676 <-- dbg read_line:66 got nosuchcommand
+   6.677 <-- err handle_command:46 unknown command: nosuchcommand
+итог: отправлено команд 4, принято строк 17
