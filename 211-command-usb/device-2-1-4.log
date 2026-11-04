@@ -1,0 +1,64 @@
+задание: 2.1.4
+проект: 211-command-usb
+устройство: 2e8a:000a
+серийный номер: E6616407E35E282B
+порт: /dev/cu.usbmodem11401
+начало: 2026-11-04T13:32:21
+   0.000 --> fw_info
+   0.148 <-- fw_info
+   0.148 <-- dbg read_line:109 got fw_info
+   0.148 <-- main            0x10000329  0xb5f0
+   0.148 <-- fw_info         0x1000069d  0x4b35
+   0.148 <-- commands        0x10007b4c
+   0.148 <-- - enable         0x10000281
+   0.148 <-- - disable        0x100002bd
+   0.148 <-- - info           0x100002f9
+   0.148 <-- - version        0x10000301
+   0.148 <-- - ping           0x10000309
+   0.148 <-- - mem_info       0x10000319
+   0.149 <-- - fw_info        0x10000321
+   0.149 <-- DEVICE_PROJECT  0x100076a0 211-command-usb
+   0.149 <-- DEVICE_BOARD    0x100076fc pico
+   0.149 <-- data_variable   0x20000f40 103
+   0.149 <-- bss_variable    0x20001f0c 3
+   0.149 <-- stack_variable  0x20041f7c 1946
+   0.149 <-- heap_variable   0x20002408 1951
+   2.163 --> fw_info
+   2.310 <-- fw_info
+   2.310 <-- dbg read_line:109 got fw_info
+   2.310 <-- main            0x10000329  0xb5f0
+   2.310 <-- fw_info         0x1000069d  0x4b35
+   2.310 <-- commands        0x10007b4c
+   2.310 <-- - enable         0x10000281
+   2.310 <-- - disable        0x100002bd
+   2.310 <-- - info           0x100002f9
+   2.311 <-- - version        0x10000301
+   2.311 <-- - ping           0x10000309
+   2.311 <-- - mem_info       0x10000319
+   2.311 <-- - fw_info        0x10000321
+   2.311 <-- DEVICE_PROJECT  0x100076a0 211-command-usb
+   2.311 <-- DEVICE_BOARD    0x100076fc pico
+   2.311 <-- data_variable   0x20000f40 104
+   2.311 <-- bss_variable    0x20001f0c 4
+   2.311 <-- stack_variable  0x20041f7c 1946
+   2.312 <-- heap_variable   0x20002408 1951
+   4.323 --> fw_info
+   4.472 <-- fw_info
+   4.472 <-- dbg read_line:109 got fw_info
+   4.472 <-- main            0x10000329  0xb5f0
+   4.473 <-- fw_info         0x1000069d  0x4b35
+   4.473 <-- commands        0x10007b4c
+   4.473 <-- - enable         0x10000281
+   4.473 <-- - disable        0x100002bd
+   4.474 <-- - info           0x100002f9
+   4.474 <-- - version        0x10000301
+   4.474 <-- - ping           0x10000309
+   4.474 <-- - mem_info       0x10000319
+   4.475 <-- - fw_info        0x10000321
+   4.475 <-- DEVICE_PROJECT  0x100076a0 211-command-usb
+   4.475 <-- DEVICE_BOARD    0x100076fc pico
+   4.475 <-- data_variable   0x20000f40 105
+   4.475 <-- bss_variable    0x20001f0c 5
+   4.475 <-- stack_variable  0x20041f7c 1946
+   4.476 <-- heap_variable   0x20002408 1951
+итог: отправлено команд 3, принято строк 54
