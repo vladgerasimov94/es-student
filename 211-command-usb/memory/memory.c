@@ -154,13 +154,13 @@ void boot_info(void)
     uint32_t level = (*gpio_in >> led_pin()) & 1u;
     uint32_t sdk_level = gpio_get(led_pin());
 
-    printf("vector table %08x\n", (unsigned)(uintptr_t)vectors);
+    printf("vector table 0x%08x\n", (unsigned)(uintptr_t)vectors);
 
-    printf("  stack top %08x\n", (unsigned)stack_top);
-    printf("  reset %08x\n", (unsigned)reset_handler);
-    printf("  reset (even) %08x\n", (unsigned)(uintptr_t)reset_handler_even);
+    printf("  stack top 0x%08x\n", (unsigned)stack_top);
+    printf("  reset 0x%08x\n", (unsigned)reset_handler);
+    printf("  reset (even) 0x%08x\n", (unsigned)(uintptr_t)reset_handler_even);
 
-    printf("gpio in %08x\n", (unsigned)(uintptr_t)gpio_in);
+    printf("gpio in 0x%08x\n", (unsigned)(uintptr_t)gpio_in);
     printf("  led bit %u\n", (unsigned)level);
     printf("  gpio_get %u\n", (unsigned)sdk_level);
 }
