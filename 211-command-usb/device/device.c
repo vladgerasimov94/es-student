@@ -70,6 +70,6 @@ void dev_info(void)
     unsigned struct_sizeof = sizeof(device_card);
     unsigned padding = struct_sizeof - fields;
 
-    printf("fields %8u, sizeof %8u, padding %8u\n",
+    printf("fields %u, sizeof %u, padding %u\n",
            fields, struct_sizeof, padding);
 }

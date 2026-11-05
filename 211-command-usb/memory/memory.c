@@ -1,10 +1,14 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
-#include "hardware/regs/addressmap.h"
-#include "pico/stdlib.h"
 #include "command.h"
 #include "device.h"
+#include "led.h"
+
+#include "hardware/regs/addressmap.h"
+#include "hardware/regs/sio.h"
+#include "hardware/gpio.h"
+#include "pico/stdlib.h"
 
 extern char __flash_binary_start;
 extern char __flash_binary_end;
@@ -20,10 +24,11 @@ extern char __StackBottom;
 extern char __StackTop;
 
 int main(void);
-// uint16_t *main_code = (uint16_t *)((uintptr_t)main & ~1u);
 
 uint32_t data_variable = 100;
 uint32_t bss_variable;
+
+#define VECTOR_TABLE 0x10000100
 
 static void row(const char *name, uintptr_t start, uintptr_t end)
 {
@@ -109,8 +114,6 @@ void fw_info(void)
     // main, fw_info  — адрес с признаком Thumb и два байта по сброшенному адресу
     uint16_t *main_code = (uint16_t *)((uintptr_t)main & ~1u);
     uint16_t *fw_info_code = (uint16_t *)((uintptr_t)fw_info & ~1u);
-    // printf("main            0x%08x    %7u\n", (unsigned)(uintptr_t)main, (unsigned)(uintptr_t)main_code);
-    // printf("fw_info         0x%08x    %7u\n", (unsigned)(uintptr_t)fw_info, (unsigned)(uintptr_t)fw_info_code);
     printf("main            0x%08x  0x%04x\n", (unsigned)(uintptr_t)main, (unsigned)*main_code);
     printf("fw_info         0x%08x  0x%04x\n", (unsigned)(uintptr_t)fw_info, (unsigned)*fw_info_code);
 
@@ -137,4 +140,27 @@ void fw_info(void)
 
         free(heap_variable);
     }
+}
+
+void boot_info(void)
+{
+    const uint32_t *vectors = (const uint32_t *)VECTOR_TABLE;
+
+    uint32_t stack_top = vectors[0];
+    uint32_t reset_handler = vectors[1];
+    uint32_t reset_handler_even = reset_handler & ~1u;
+
+    volatile uint32_t *gpio_in = (uint32_t *)(SIO_BASE + SIO_GPIO_IN_OFFSET);
+    uint32_t level = (*gpio_in >> led_pin()) & 1u;
+    uint32_t sdk_level = gpio_get(led_pin());
+
+    printf("vector table %08x\n", (unsigned)(uintptr_t)vectors);
+
+    printf("  stack top %08x\n", (unsigned)stack_top);
+    printf("  reset %08x\n", (unsigned)reset_handler);
+    printf("  reset (even) %08x\n", (unsigned)(uintptr_t)reset_handler_even);
+
+    printf("gpio in %08x\n", (unsigned)(uintptr_t)gpio_in);
+    printf("  led bit %u\n", (unsigned)level);
+    printf("  gpio_get %u\n", (unsigned)sdk_level);
 }
