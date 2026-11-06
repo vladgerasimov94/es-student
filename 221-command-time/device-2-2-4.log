@@ -1,0 +1,29 @@
+задание: 2.2.4
+проект: 221-command-time
+устройство: 2e8a:000a
+серийный номер: E6616407E35E282B
+порт: /dev/cu.usbmodem11401
+начало: 2026-11-06T22:28:23
+   0.000 --> main_time_reset
+   0.001 <-- main_time_reset
+   0.001 <-- max reset
+   2.048 --> main_time_exec
+   2.049 <-- main_time_exec
+   2.050 <-- iteration avg 2.51 us, max 146 us
+   3.059 --> calc_pi
+   3.059 <-- calc_pi
+   7.766 <-- pi: 3.14159165
+   7.767 <-- time: 4706 ms
+   9.181 --> main_time_exec
+   9.182 <-- main_time_exec
+   9.182 <-- iteration avg 5.70 us, max 4706997 us
+  14.279 --> main_time_exec
+  14.279 <-- main_time_exec
+  14.280 <-- iteration avg 2.64 us, max 4706997 us
+  15.297 --> main_time_reset
+  15.298 <-- main_time_reset
+  15.298 <-- max reset
+  16.318 --> main_time_exec
+  16.319 <-- main_time_exec
+  16.319 <-- iteration avg 2.59 us, max 137 us
+итог: отправлено команд 7, принято строк 15
