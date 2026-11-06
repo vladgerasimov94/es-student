@@ -1,0 +1,26 @@
+задание: 2.2.1
+проект: 221-command-time
+устройство: 2e8a:000a
+серийный номер: E6616407E35E282B
+порт: /dev/cu.usbmodem11401
+начало: 2026-11-06T12:54:56
+   0.000 --> clk_info
+   0.175 <-- clk_info
+   0.175 <-- dbg read_line:128 got clk_info
+   0.175 <-- signal     set_khz measured_khz
+   0.177 <-- clk_ref      12000        12001
+   0.177 <-- clk_sys     125000       125001
+   0.179 <-- clk_peri    125000       125001
+   0.180 <-- clk_usb      48000        48000
+   0.181 <-- clk_adc      48000        48000
+   0.182 <-- rosc             -         5660
+   2.016 --> info
+   2.102 <-- info
+   2.102 <-- dbg read_line:128 got info
+   2.102 <-- project: 221-command-time
+   2.103 <-- repo: https://github.com/vladgerasimov94/es-student
+   2.103 <-- board: pico
+   2.103 <-- serial: E6616407E35E282B
+   2.103 <-- chip: manufacturer 0x927, part 0x0002, revision 2
+   2.103 <-- pico-sdk: 2.3.0
+итог: отправлено команд 2, принято строк 17
