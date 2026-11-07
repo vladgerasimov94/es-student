@@ -1,0 +1,70 @@
+задание: 2.2.5
+проект: 221-command-time
+устройство: 2e8a:000a
+серийный номер: E6616407E35E282B
+порт: /dev/cu.usbmodem11401
+начало: 2026-11-07T12:07:03
+   0.000 --> clk_info
+   0.001 <-- clk_info
+   0.001 <-- signal     set_khz measured_khz
+   0.002 <-- clk_ref      12000        12001
+   0.003 <-- clk_sys     125000       125000
+   0.004 <-- clk_peri     48000        48000
+   0.005 <-- clk_usb      48000        48000
+   0.006 <-- clk_adc      48000        48000
+   0.007 <-- rosc             -         5655
+   1.030 --> main_time_reset
+   1.031 <-- main_time_reset
+   1.031 <-- max reset
+   3.052 --> main_time_exec
+   3.053 <-- main_time_exec
+   3.054 <-- iteration avg 2.54 us, max 185 us
+   4.076 --> calc_pi
+   4.077 <-- calc_pi
+   8.784 <-- pi: 3.14159165
+   8.785 <-- time: 4706 ms
+  10.208 --> clk_sys_low
+  10.209 <-- clk_sys_low
+  10.210 <-- inf clk_sys_set:39 clk_sys 62500 kHz
+  11.226 --> clk_info
+  11.227 <-- clk_info
+  11.228 <-- signal     set_khz measured_khz
+  11.229 <-- clk_ref      12000        12002
+  11.230 <-- clk_sys      62500        62500
+  11.232 <-- clk_peri     48000        48000
+  11.233 <-- clk_usb      48000        48000
+  11.234 <-- clk_adc      48000        48000
+  11.235 <-- rosc             -         5663
+  12.252 --> uptime
+  12.253 <-- uptime
+  12.254 <-- uptime: 601626 ms
+  14.280 --> uptime
+  14.281 <-- uptime
+  14.281 <-- uptime: 603654 ms
+  15.297 --> main_time_reset
+  15.299 <-- main_time_reset
+  15.299 <-- max reset
+  17.333 --> main_time_exec
+  17.334 <-- main_time_exec
+  17.335 <-- iteration avg 5.18 us, max 323 us
+  18.350 --> calc_pi
+  18.351 <-- calc_pi
+  27.765 <-- pi: 3.14159165
+  27.765 <-- time: 9413 ms
+  29.396 --> clk_sys_default
+  29.398 <-- clk_sys_default
+  29.399 <-- inf clk_sys_set:39 clk_sys 125000 kHz
+  30.420 --> clk_info
+  30.421 <-- clk_info
+  30.421 <-- signal     set_khz measured_khz
+  30.422 <-- clk_ref      12000        12001
+  30.423 <-- clk_sys     125000       125000
+  30.424 <-- clk_peri     48000        48000
+  30.425 <-- clk_usb      48000        48000
+  30.427 <-- clk_adc      48000        48000
+  30.428 <-- rosc             -         5657
+  31.444 --> calc_pi
+  31.444 <-- calc_pi
+  36.151 <-- pi: 3.14159165
+  36.151 <-- time: 4706 ms
+итог: отправлено команд 14, принято строк 49
