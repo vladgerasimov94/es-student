@@ -4,7 +4,7 @@
 #include "led-task.h"
 
 #define BUTTON_PIN 15u
-#define BUTTON_DEBOUNCE_US 20000u
+#define BUTTON_DEBOUNCE_US 20000
 
 typedef enum {
     BUTTON_STATE_RELEASED,
