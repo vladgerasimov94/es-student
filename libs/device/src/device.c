@@ -1,4 +1,4 @@
-#include "device.h"
+#include "device/device.h"
 
 #include "pico/version.h"
 #include "pico/unique_id.h"

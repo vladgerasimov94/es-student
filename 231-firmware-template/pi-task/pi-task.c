@@ -1,5 +1,6 @@
 #include "pi-task.h"
-#include "pico/time.h"
+
+#include "systime/systime.h"
 
 // 585 тактов / 125 МГц ≈ 4,7 мкс на член; 100 членов ≈ 470 мкс.
 #define PI_TERMS_PER_CALL 100
@@ -24,7 +25,7 @@ bool pi_task_start(uint32_t n)
     pi_k = 0;
     pi_sum = 0.0;
     pi_sign = 1.0;
-    pi_start_us = time_us_64();
+    pi_start_us = systime_us();
     pi_state = PI_STATE_RUNNING;
     return true;
 }
@@ -47,7 +48,7 @@ void pi_task_handle(void)
 
     if (pi_k == pi_n) {
         pi_result = 4.0 * pi_sum;
-        pi_end_us = time_us_64();
+        pi_end_us = systime_us();
         pi_state = PI_STATE_READY;
     }
 }

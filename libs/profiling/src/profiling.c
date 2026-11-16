@@ -1,4 +1,4 @@
-#include "profiling.h"
+#include "profiling/profiling.h"
 
 #include <stddef.h>
 #include "pico/time.h"
@@ -23,6 +23,7 @@ void profiling_stopwatch_init(uint32_t id, const char *name)
     }
 }
 
+#if PROFILING_ENABLED
 void profiling_start(uint32_t id)
 {
     if (id < PROFILING_STOPWATCH_COUNT && stopwatches[id].name != NULL)
@@ -50,6 +51,7 @@ void profiling_stop(uint32_t id)
         stopwatch->max_us = elapsed_us;
     }
 }
+#endif
 
 bool profiling_get(uint32_t id, profiling_result_t *result)
 {

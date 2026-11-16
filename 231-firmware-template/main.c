@@ -2,12 +2,12 @@
 #include "pico/stdlib.h"
 #include "api.h"
 #include "button-task.h"
-#include "device.h"
+#include "firmware.h"
 #include "led-task.h"
-#include "log.h"
+#include "logging/log.h"
 #include "pi-task.h"
-#include "profiling.h"
-#include "stdio-text-protocol.h"
+#include "profiling/profiling.h"
+#include "stdio-text-protocol/stdio-text-protocol.h"
 
 typedef enum
 {
@@ -21,7 +21,7 @@ typedef enum
 int main(void)
 {
     stdio_init_all();
-    LOG_INF("%s %s\n", DEVICE_NAME, FIRMWARE_VERSION);
+    LOG_INF("%s %s\n", FIRMWARE_NAME, FIRMWARE_VERSION);
     led_task_init();
     button_task_init();
     profiling_stopwatch_init(STOPWATCH_LOOP, "loop");
