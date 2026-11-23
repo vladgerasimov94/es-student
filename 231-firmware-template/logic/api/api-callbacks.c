@@ -1,29 +1,19 @@
-#include "api.h"
+#include "api/api-commands.h"
 
 #include <ctype.h>
 #include <errno.h>
 #include <inttypes.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include "button-task.h"
+#include "button-task/button-task.h"
 #include "device/device.h"
 #include "firmware.h"
-#include "led-task.h"
-#include "pi-task.h"
+#include "led-task/led-task.h"
+#include "pi-task/pi-task.h"
 #include "profiling/profiling.h"
 #include "systime/systime.h"
 
 #define PI_DEFAULT_TERMS 1000000u
-
-typedef void (*api_callback_t)(const command_t *command);
-
-typedef struct
-{
-    const char *name;
-    const char *help;
-    api_callback_t callback;
-} api_command_t;
 
 static bool parse_u32(const char *text, uint32_t *value)
 {
@@ -199,7 +189,7 @@ static void cmd_profiling_reset(const command_t *command)
     printf("profiling reset\n");
 }
 
-static const api_command_t api_commands[] = {
+const api_command_t api_commands[] = {
     { "info", "device passport", cmd_info },
     { "uptime", "time since reset", cmd_uptime },
     { "led_enable", "turn the LED on", cmd_led_enable },
@@ -213,34 +203,4 @@ static const api_command_t api_commands[] = {
     { "profiling_reset", "reset stopwatch results", cmd_profiling_reset },
 };
 
-static const size_t api_command_count = sizeof(api_commands) / sizeof(api_commands[0]);
-
-void api_handle(const command_t *command)
-{
-    if (command->truncated)
-    {
-        printf("error: command longer than 63 characters or 4 arguments\n");
-        return;
-    }
-
-    if (strcmp(command->name, "help") == 0)
-    {
-        printf("%-16s %s\n", "help", "list of commands");
-        for (size_t i = 0; i < api_command_count; i++)
-        {
-            printf("%-16s %s\n", api_commands[i].name, api_commands[i].help);
-        }
-        return;
-    }
-
-    for (size_t i = 0; i < api_command_count; i++)
-    {
-        if (strcmp(command->name, api_commands[i].name) == 0)
-        {
-            api_commands[i].callback(command);
-            return;
-        }
-    }
-
-    printf("error: unknown command '%s', try help\n", command->name);
-}
+const uint32_t api_command_count = sizeof(api_commands) / sizeof(api_commands[0]);
