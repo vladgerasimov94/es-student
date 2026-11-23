@@ -1,5 +1,6 @@
 #include "led-task/led-task.h"
 
+#include <stddef.h>
 #include "platform/platform.h"
 #include "systime/systime.h"
 
@@ -92,18 +93,19 @@ bool led_task_set_period_ms(uint32_t period_ms)
 
 void led_task_next_period(void)
 {
-    switch (led_period_ms)
+    static const uint32_t periods_ms[] = {250, 500, 1000};
+    const size_t period_count = sizeof(periods_ms) / sizeof(periods_ms[0]);
+
+    for (size_t i = 0; i + 1 < period_count; i++)
     {
-    case 250u:
-        led_task_set_period_ms(500u);
-        break;
-    case 500u:
-        led_task_set_period_ms(1000u);
-        break;
-    default:
-        led_task_set_period_ms(250u);
-        break;
+        if (led_period_ms == periods_ms[i])
+        {
+            led_task_set_period_ms(periods_ms[i + 1]);
+            return;
+        }
     }
+
+    led_task_set_period_ms(periods_ms[0]);
 }
 
 uint32_t led_task_get_period_ms(void)
