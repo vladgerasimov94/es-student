@@ -1,0 +1,46 @@
+задание: 3.1.2
+проект: 311-adc
+устройство: 2e8a:000a
+серийный номер: E6616407E35E282B
+порт: /dev/ttys000
+начало: 2026-11-24T08:21:38
+   0.000 --> 
+   0.538 --> help
+   0.538 <-- help
+   0.538 <-- help             list of commands
+   0.538 <-- info             device passport
+   0.538 <-- uptime           time since reset
+   0.538 <-- led_enable       turn the LED on
+   0.538 <-- led_disable      turn the LED off
+   0.538 <-- led_blink        blink the LED
+   0.538 <-- led_period       set blink period: led_period <period_ms>
+   0.538 <-- button           button state and press count
+   0.538 <-- get_voltage      voltage on GP26, ADC input 0
+   0.538 <-- get_temp         chip temperature, degrees Celsius
+   0.538 <-- pi_start         start calculating pi: pi_start [<terms>]
+   0.538 <-- pi               pi calculation result or state
+   0.590 <-- profiling        stopwatch results
+   0.590 <-- profiling_reset  reset stopwatch results
+   1.563 --> info
+   1.617 <-- info
+   1.617 <-- name: es-adc
+   1.617 <-- version: 1.0.0
+   1.617 <-- project: 311-adc
+   1.617 <-- repo: https://github.com/vladgerasimov94/es-student
+   1.617 <-- board: host
+   1.617 <-- serial:
+   1.617 <-- chip: manufacturer 0x000, part 0x0000, revision 0
+   1.617 <-- pico-sdk: host
+   2.574 --> get_temp
+   2.629 <-- get_temp
+   2.629 <-- temp: 27.6 C
+   3.607 --> get_temp
+   3.662 <-- get_temp
+   3.662 <-- temp: 28.1 C
+   4.656 --> get_temp
+   4.707 <-- get_temp
+   4.707 <-- temp: 27.1 C
+   5.674 --> get_voltage
+   5.727 <-- get_voltage
+   5.727 <-- voltage: 1.652 V
+итог: отправлено кадров 7, принято строк 32
