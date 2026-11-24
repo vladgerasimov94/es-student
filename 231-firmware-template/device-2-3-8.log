@@ -25,7 +25,7 @@
    1.524 <-- version: 1.2.0
    1.524 <-- project: 231-firmware-template
    1.524 <-- repo: https://github.com/vladgerasimov94/es-student
-   1.524 <-- board: host-simulation
+   1.524 <-- board: host
    1.524 <-- serial: E6616407E35E282B
    1.524 <-- chip: manufacturer 0x000, part 0x0000, revision 0
    1.524 <-- pico-sdk: host
